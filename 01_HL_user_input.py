@@ -10,16 +10,17 @@
 # Number checking function goes here
 def intcheck(question, low = None, high = None):
 
-    #sets up error messages
+    # sets up error messages
     if low is not None and high is not None:
-        error = "Please enter an integer between {} and {} (inclusive)".format(low, high)
+        error = "Please enter an integer between {} and {} (inclusive):".format(low, high)
 
     elif low is not None and high is None:
-        error = "Please enter an integer that is more than or equal to {}".format(low)
+        error = "Please enter an integer that is more than or equal to {}, " \
+                "and less than {}:".format(low,10000)
     elif low is None and high is not None:
-        error = "Please enter an integer that is less than or equal to {}".format(high)
+        error = "Please enter an integer that is less than or equal to {}:".format(high)
     else:
-        error = "Please enter an integer"
+        error = "Please enter an positive integer:"
 
     while True:
 
@@ -30,6 +31,12 @@ def intcheck(question, low = None, high = None):
             if low is not None and response < low:
                 print(error)
                 continue
+            # Checks response is not too high
+            if high is not None and response > high:
+                print(error)
+                continue
+
+            return response
 
         except ValueError:
             print(error)
@@ -38,7 +45,8 @@ def intcheck(question, low = None, high = None):
 
 # Main routine
 
-lowest = intcheck("Low Number: ")
-highest = intcheck("High number: ", lowest + 1)
+lowest = intcheck("Low Number: ", 1, 9991)
+print("\nSuccess!\n")
+highest = intcheck("High number: ", lowest + 9, 10000)
 rounds = intcheck("Rounds: ", 1, 10)
 guess = intcheck("Guess: ", lowest, highest)
