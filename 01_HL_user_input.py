@@ -48,5 +48,7 @@ def intcheck(question, low = None, high = None):
 lowest = intcheck("Low Number: ", 1, 9991)
 print("\nSuccess!\n")
 highest = intcheck("High number: ", lowest + 9, 10000)
+print("\nSuccess!\n")
 rounds = intcheck("Rounds: ", 1, 10)
+print("\nSuccess!\n")
 guess = intcheck("Guess: ", lowest, highest)
