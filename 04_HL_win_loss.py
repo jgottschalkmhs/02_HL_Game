@@ -22,32 +22,38 @@ while guess != SECRET and guesses_left >= 1:
     guesses_left -= 1
 
     # If user has 1+ guesses left...
-    if guesses_left > 1:
+    if guesses_left > 2:
+
         if guess > SECRET:
             feedback = "Too high, please try again."
         elif guess < SECRET:
             feedback = "Too low, please try again."
-        else:
-            feedback = "Great job"
+        elif guess == SECRET:
+            # If user guessed right the first time...
+            if guesses_left == GUESSES_ALLOWED - 1:
+                feedback = "Amazing! You got it in one guess!"
+            # If user has had more than one guess...
+            else:
+                if guesses_left == 1:
+                    feedback = "Good job! You guessed the number! You got it in {} guesses. You had 1 guess left" \
+                        .format(GUESSES_ALLOWED - guesses_left)
+                elif guesses_left == 0:
+                    feedback = "Superb! You guessed the number just in time! You used up all {} guesses." \
+                               .format(GUESSES_ALLOWED - guesses_left)
+                else:
+                    feedback = "Great job! You guessed the number! You got it in {} guesses. You had {} guess(es) " \
+                               "left".format(GUESSES_ALLOWED - guesses_left, guesses_left)
     # If user has one guess left...
+    elif guesses_left == 1:
+        feedback = feedback + "\nYou have one guess left"
+
     elif guesses_left == 0:
         if guess > SECRET:
-            feedback = "Too high. You only have one guess left!"
+            feedback = "Too high. Game over :("
         elif guess < SECRET:
-            feedback = "Too low. You only have one guess left!"
+            feedback = "Too low. Game over :("
         else:
-            feedback = "Great job!"
-
+            feedback = "Superb! You guessed the number just in time! You used up all {} guesses." \
+                               .format(GUESSES_ALLOWED - guesses_left)
 
     print(feedback)
-
-if guess == SECRET:
-    # If user guessed right the first time...
-    if guesses_left == GUESSES_ALLOWED - 1:
-        print("Amazing! You got it in one guess!")
-    # If user has had more than one guess...
-    else:
-        print("Good job! You guessed the number! You got it in {} guesses. You had {} guesses left"
-              .format(GUESSES_ALLOWED - guesses_left, guesses_left))
-
-
