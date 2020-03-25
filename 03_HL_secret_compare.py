@@ -4,9 +4,9 @@ SECRET = 7
 
 guess = ""
 
-while guess!= SECRET:
+while guess != SECRET:
 
-    guess = int(input("Guess: ")) # replace this with a funtion
+    guess = int(input("Guess: "))  # replace this with a function
 
     if guess < SECRET:
         print("Too low, try a lower number")
