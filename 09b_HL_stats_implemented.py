@@ -68,7 +68,7 @@ while rounds_played < rounds:
     print(feedback)
 
     # Adds results to summary list
-    summary = "{}: {} ({})".format(rounds_played+1, GUESSES_ALLOWED - guesses_left, status)
+    summary = "Round {}: {} ({})".format(rounds_played+1, GUESSES_ALLOWED - guesses_left, status)
     game_summary.append(summary)
 
     game_stats.append(GUESSES_ALLOWED - guesses_left)
@@ -99,8 +99,6 @@ best = game_stats[0]        # first item in sorted list
 worst = game_stats[-1]      # last item in sorted list
 average = sum(game_stats)/len(game_stats)
 
-print()                 # For debugging purposes
-print(game_stats)       # For debugging purposes
 print()
 print("*** Summary Statistics ***")
 print("Best: {}".format(best))
