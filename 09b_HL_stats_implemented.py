@@ -79,7 +79,7 @@ list_count = 1
 for item in game_stats:
 
     # indicates if game has been won or lost
-    if item > GUESSES_ALLOWED:
+    if item >= GUESSES_ALLOWED:
         status = "lost"
     else:
         status = "won"
