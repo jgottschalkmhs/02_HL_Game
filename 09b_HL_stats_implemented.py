@@ -81,8 +81,7 @@ for item in game_stats:
     # indicates if game has been won or lost
     if item > GUESSES_ALLOWED:
         status = "lost"
-    elif item <= GUESSES_ALLOWED:
-
+    else:
         status = "won"
 
     print("Round {}: {} ({})".format(list_count, item, status))
