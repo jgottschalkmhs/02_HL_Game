@@ -91,8 +91,6 @@ print("*** Game scores ***")
 # Outputs list of rounds and results
 for item in game_summary:
     print(item)
-
-
 # Calculate (and then print) game statistics
 game_stats.sort()
 best = game_stats[0]        # first item in sorted list
@@ -104,3 +102,4 @@ print("*** Summary Statistics ***")
 print("Best: {}".format(best))
 print("Worst: {}".format(worst))
 print("Average: {:.2f}".format(average))
+

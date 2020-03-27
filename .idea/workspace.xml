@@ -30,7 +30,8 @@
   <component name="ProjectId" id="1Zb4ktQYcHJHN9JV5eZ1AoM1OfQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/henry's_code_before_usability.py" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/../01_Lucky_Unicorn" />
@@ -44,6 +45,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Aref\Documents\GitHub\02_HL_Game" />
+      <recent name="C:\Users\Aref\Desktop" />
       <recent name="H:\Documents\COM101\01_Programming\02_HL_Game" />
     </key>
   </component>
@@ -59,7 +62,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.11_HL_max_guesses">
+  <component name="RunManager" selected="Python.13_HL_FINAL_post-usability-testing">
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -79,7 +82,7 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <configuration name="04_HL_win_loss" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="02_HL_get_secret_v2_improvised" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="02_HL_Game" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -91,28 +94,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04_HL_win_loss.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="08_HL_score" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="02_HL_Game" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/08_HL_score.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/02_HL_get_secret_v2_improvised.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -176,6 +158,48 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/11_HL_max_guesses.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="12_HL_game" type="PythonConfigurationType" factoryName="Python">
+      <module name="02_HL_Game" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/12_HL_game.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="13_HL_FINAL_post-usability-testing" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="02_HL_Game" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/13_HL_FINAL_post-usability-testing.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -279,19 +303,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.04_HL_win_loss" />
-      <item itemvalue="Python.08_HL_score" />
+      <item itemvalue="Python.12_HL_game" />
+      <item itemvalue="Python.02_HL_get_secret_v2_improvised" />
+      <item itemvalue="Python.11_HL_max_guesses" />
       <item itemvalue="Python.09a_Stats_expiremnt" />
       <item itemvalue="Python.09b_HL_stats_implemented" />
-      <item itemvalue="Python.11_HL_max_guesses" />
+      <item itemvalue="Python.13_HL_FINAL_post-usability-testing" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.11_HL_max_guesses" />
+        <item itemvalue="Python.13_HL_FINAL_post-usability-testing" />
         <item itemvalue="Python.09b_HL_stats_implemented" />
+        <item itemvalue="Python.02_HL_get_secret_v2_improvised" />
+        <item itemvalue="Python.11_HL_max_guesses" />
         <item itemvalue="Python.09a_Stats_expiremnt" />
-        <item itemvalue="Python.08_HL_score" />
-        <item itemvalue="Python.04_HL_win_loss" />
       </list>
     </recent_temporary>
   </component>
