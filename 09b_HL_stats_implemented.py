@@ -8,12 +8,14 @@
 SECRET = 7
 GUESSES_ALLOWED = 4
 rounds = int(input("How many rounds? "))
-game_stats = []
+game_summary = []   # list to record results of each round
+game_stats = []     # list to hold number of guesses (to work out average)
 
 num_won = 0
 rounds_played = 0
 
 feedback = "n/a"
+status = "won"
 
 while rounds_played < rounds:
     guess = ""
@@ -27,9 +29,11 @@ while rounds_played < rounds:
         if guesses_left < 1:
             if guess < SECRET:
                 feedback = "\nSorry you lost (too low)"
+                status = "lost"
                 break
             elif guess > SECRET:
                 feedback = "\nSorry you lost (too high)"
+                status = "lost"
                 break
             else:
                 feedback = "\nWell done! You guessed the secret number.\n" \
@@ -62,7 +66,16 @@ while rounds_played < rounds:
                     break
 
     print(feedback)
+
+    # Adds results to summary list
+    summary = "{}: {} ({})".format(rounds_played+1, GUESSES_ALLOWED - guesses_left, status)
+    game_summary.append(summary)
+
     game_stats.append(GUESSES_ALLOWED - guesses_left)
+
+    # Adds number of guesses to list so that average can be worked out
+
+
     print("\nWon: {} \t | \t Lost: {}".format(num_won, rounds_played - num_won + 1))
     rounds_played += 1
 
@@ -74,18 +87,11 @@ while rounds_played < rounds:
 # print each round's outcome...
 print()
 print("*** Game scores ***")
-status = "n/a"
-list_count = 1
-for item in game_stats:
 
-    # indicates if game has been won or lost
-    if item > GUESSES_ALLOWED:
-        status = "lost"
-    else:
-        status = "won"
+# Outputs list of rounds and results
+for item in game_summary:
+    print(item)
 
-    print("Round {}: {} ({})".format(list_count, item, status))
-    list_count += 1
 
 # Calculate (and then print) game statistics
 game_stats.sort()
