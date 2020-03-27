@@ -7,10 +7,10 @@
 # if user guesses the secret number within the number of guesses print 'well done'
 
 SECRET = 7
-GUESSED_ALLOWED = 4
+GUESSES_ALLOWED = 4
 
 # initialise variables
-guesses_left = GUESSED_ALLOWED
+guesses_left = GUESSES_ALLOWED
 num_won = 0
 guess = ""
 
@@ -29,7 +29,7 @@ while guess != SECRET and guesses_left >= 1:
                        "\nYou got it on the final guess."
             break
 
-    elif guess == SECRET and guesses_left == (GUESSED_ALLOWED - 1):
+    elif guess == SECRET and guesses_left == (GUESSES_ALLOWED - 1):
         feedback = "\nAwesome! You got it on the first guess"
         break
 
