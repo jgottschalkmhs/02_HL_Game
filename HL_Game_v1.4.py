@@ -3,8 +3,14 @@
 # Version 1.4 log
 
 # To do:
-# 1) Make different boundary requirements for each difficulty
+# 1a) (Theoretical) Make different boundary requirements for each difficulty
+# 1b) (Practical) Cut, then paste boundary inputs 3 times for each difficulty, with different max\min  values for each
 # 2) Add option to choose your own number of guesses
+# 3) Change location of "Rounds" explanation to the beginning with the into + instructions
+# 4a) Changing most 'else' statements into 'elif', and changing the 'else' statements into error messages of the
+#     code not working properly (ie: code should never reach 'else' part of the code, only 'if' or 'elif')
+# 4b) Create READ_ME file with all error messages and their convenience defined, and how to troubleshoot them.
+# 5) Improve bits and pieces of the visual appeal of the project
 
 # >>> Ideas for future versions:
 # Change difficulties to: Easy, Challenging, Hard and Extreme
@@ -21,24 +27,20 @@
 import random
 import math
 
-# Define high and low (to eliminate weird error messages?)
-high = ""
-low = ""
-
 
 # Number checking function goes here
 def intcheck(question, low = None, high = None):
 
     # sets up error messages
     if low is not None and high is not None:
-        error = "Please enter an integer between {} and {} (inclusive):".format(low, high)
+        error = "Please enter an integer between {} and {} (inclusive).".format(low, high)
     elif low is not None and high is None:
         error = "Please enter an integer that is more than or equal to {}, " \
-                "and less than {}:".format(low, 1000000)
+                "and less than {}.".format(low, high)
     elif low is None and high is not None:
-        error = "Please enter an integer that is less than or equal to {}:".format(high)
+        error = "Please enter an integer that is less than or equal to {}.".format(high)
     else:
-        error = "Please enter an positive integer:"
+        error = "Please enter a positive integer."
 
     while True:
 
@@ -79,10 +81,15 @@ print("\nWelcome to HL game, by Aref Osman. The game will generate a secret numb
       "guessing the secret number correctly. A set algorithm will determine the number of\n"
       "guesses that you will be allowed to use per round.")
 print()
+print("All rounds will have different secret numbers, but the range\n"
+      "will stay as your lower and upper boundary all throughout. \n"
+      "You can choose to start over with different boundaries after\n"
+      "you have finished all rounds. Max: 25 rounds.")
+print()
 print("\nNote: In Python, anytime you want to 'push a key', make sure it's a valid character\non the keyboard."
       " After you push a valid key, push <enter> to submit your input.\n")
-tip_input = input("\033[44;47mTo find out a useful tip for the game, push any key. Otherwise, push enter to start"
-                  " playing!\033[m")
+tip_input = input("\033[44;47mTo find out a useful tip for the game, push any key.\033[m\n"
+                  "\033[44;47mOtherwise, push <enter> to start playing!\033[m")
 
 if tip_input != "":
     print("\n\033[1mJK! April fools! You're on your own :((((\033[0m\n")
@@ -106,7 +113,7 @@ while keep_going == "":
                            "   Hard (H)   \033[m|\n\n\n\033[1mDifficulty: \033[0m\n")
         while difficulty.lower() != "e" and difficulty.lower() != "easy" and difficulty.lower() != "m" and \
                 difficulty.lower() != "medium" and difficulty.lower() != "h" and difficulty.lower() != "hard":
-            print("")
+            print()
             difficulty = input("Sorry, I didn't catch that. Enter E, M or H for\n"
                                "easy, medium or hard difficulties, respectively.\n\n\033[1mDifficulty: \033[0m")
 
@@ -115,59 +122,94 @@ while keep_going == "":
             game_diff = "Easy"
         elif difficulty.lower() == "medium" or difficulty.lower() == "m":
             game_diff = "Medium"
-        else:
+        elif difficulty.lower() == "hard" or difficulty.lower() == "h":
             game_diff = "Hard"
+        else:
+            print("Error 128 - big deal! Report to developer immediately.")
 
         # confirm difficulty
         difficulty_keep_going = input("The difficulty you have chosen is {}.\n"
                                       "Push <enter> to change it, or any other key to proceed.".format(game_diff))
         print()
 
-    # Upper/lower boundary input
-    low = intcheck(">>> Please choose a\033[1m lower boundary: \033[0m", 1, 999991)
-    high = intcheck(">>> Please choose a\033[1m higher boundary: \033[0m", low + 9, 1000000)
-
-    # Generic information for all formulae
-    range = high - low + 1
-    max_raw = math.log2(range)
-    max_rounded_up = math.ceil(max_raw)
+    # Define variable (to eliminate weird error messages?)
     guesses_allowed = ""
+    guess_input_status = ""
 
-    # Max guesses for Easy difficulty
+    # Easy difficulty
     if game_diff == "Easy":
+        # Boundary inputs
+        low = intcheck(">>> Please choose a\033[1m lower boundary: \033[0m", 1, 999999991)
+        high = intcheck(">>> Please choose a\033[1m higher boundary: \033[0m", low + 1, 1000000000)
+        # Guesses calculator
         # Really easy - 2 to 10 extra guesses than needed by binary search
+        range = high - low + 1
+        max_raw = math.log2(range)
+        max_rounded_up = math.ceil(max_raw)
         part1 = math.ceil(max_raw)
         len_range = len(str(range - 1))
         part2 = 2 * int(len_range)
         guesses_allowed = part1 + part2
+        # Allow custom guess input
+        guess_input_status = "yes"
 
-    # Max guesses for Medium difficulty
+    # Medium difficulty
     elif game_diff == "Medium":
+        # Boundary inputs
+        low = intcheck(">>> Please choose a\033[1m lower boundary: \033[0m", 1, 999991)
+        high = intcheck(">>> Please choose a\033[1m higher boundary: \033[0m", low + 9, 1000000)
+        # Guesses calculator
         # Min # of guesses required using binary search (Log base 2 of range, rounded up to nearest whole number)
+        range = high - low + 1
+        max_raw = math.log2(range)
         guesses_allowed = math.ceil(max_raw)
+        # Allow custom guess input
+        guess_input_status = "yes"
 
-    # Max guesses for Hard difficulty
+    # Hard difficulty
     elif game_diff == "Hard":
+        # Boundary inputs
+        low = intcheck(">>> Please choose a\033[1m lower boundary: \033[0m", 1, 999991)
+        high = intcheck(">>> Please choose a\033[1m higher boundary: \033[0m", low + 19, 1000000)
+        # Guesses calculator
         # Requires luck to win - not enough guesses for complete binary search & bigger range = even lesser guesses
-        if max_raw > 5:
+        max_rounded_up = math.ceil(math.log2(high - low + 1))
+        if math.log2(high - low + 1) > 5:
             guesses_allowed = max_rounded_up - 2
-        elif max_raw > 2:
+        elif math.log2(high - low + 1) > 2:
             guesses_allowed = max_rounded_up - 1
         else:
             guesses_allowed = max_rounded_up
+        # Prevent custom guess input
+        guess_input_status = "no"
 
     else:
         # Code should never reach this part
-        print("Error 01 - elif statements insufficient for proper criteria")
-
+        print("Error 128 - big deal! Report to developer immediately.")
 
     # How many rounds?
-    rounds = intcheck(">>> How many\033[1m rounds\033[0m do you want to play?\n"
-                      "    All rounds will have different secret numbers, but the range\n"
-                      "    will stay as your lower and upper boundary all throughout. \n"
-                      "    You can choose to start over with different boundaries after\n"
-                      "    you have finished all rounds. Max: 25 rounds. \033[1mRounds: \033[0m", 1, 25)
+    rounds = intcheck(">>> Please choose the number of\033[1m rounds\033[0m you want to play: ", 1, 25)
     print()
+
+    # Check for custom input for guesses
+    if guess_input_status == "yes":
+        custom_g_input = input("The preset algorithm has allowed you {} guesses. Do you want to\n"
+                               "choose your\033[1m custom number\033[0m of guesses? ".format(guesses_allowed))
+        while custom_g_input.lower() != "yes" and custom_g_input.lower() != "y" and custom_g_input.lower() != "no"\
+                and custom_g_input.lower() != "n":
+            custom_g_input = input("Sorry, I don't understand. Type either Yes/Y or No/N: ")
+        if custom_g_input.lower() == "yes" or custom_g_input.lower() == "y":
+            guesses_allowed = intcheck("How many guesses do you want to have? \n", 1, 999999999)
+        elif custom_g_input.lower() == "no" or custom_g_input.lower() == "n":
+            print("No problem. Best of luck!\n")
+        else:
+            print("Error 128 - big deal! Report to developer immediately.")
+
+    elif guess_input_status == "no":
+        print()
+
+    else:
+        print("Error 128 - big deal! Report to developer immediately.")
 
     # Set up lists
     game_summary = []  # list to record results of each round
