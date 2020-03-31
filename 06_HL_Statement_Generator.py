@@ -5,7 +5,7 @@ def h1_statement(statement,char):
     print(char*len(statement))
     print(statement)
     print(char*len(statement))
-    print
+    print()
 
 # Main routine
 
@@ -18,7 +18,7 @@ print()
 duplicate = h1_statement("!! You already guessed that # PLease try again.    |    "
                         "Guesses left: 2 !!","!")
 print()
-well_done = h1_statement("*** Well done! You got it in 3 guesses ***","v")
+well_done = h1_statement("*** Well done! You got it in 3 guesses ***","*")
 
 print()
 start_round = h1_statement("### Round 1 of 3 ###","#")

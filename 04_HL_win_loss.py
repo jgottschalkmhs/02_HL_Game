@@ -23,15 +23,12 @@ while guess != SECRET and guesses_left >= 1:
     if guesses_left < 1:
         if guess < SECRET:
             feedback = "\nSorry you lost"
-            break
         else:
             feedback = "\nWell done! You guessed the secret number.\n" \
                        "\nYou got it on the final guess."
-            break
 
     elif guess == SECRET and guesses_left == (GUESSES_ALLOWED - 1):
         feedback = "\nAwesome! You got it on the first guess"
-        break
 
     else:
         if guess < SECRET:
@@ -47,8 +44,6 @@ while guess != SECRET and guesses_left >= 1:
                 feedback = feedback + "\nYou had 1 guess remaining"
             else:
                 feedback = feedback + "\nYou had {} guesses remaining".format(guesses_left)
-                break
     print(feedback)
-print(feedback)
 
 print("\nThank you for playing Higher/Lower game!")

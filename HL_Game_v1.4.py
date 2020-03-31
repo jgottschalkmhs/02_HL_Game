@@ -14,6 +14,7 @@
 
 # >>> Ideas for future versions:
 # Change difficulties to: Easy, Challenging, Hard and Extreme
+
 # Give more accurate feedback (low rather than too low or high rather than too high)
 # Add suggestions-taking code + link to local storage (database perhaps)
 # Use statement generator more often for visual appeal
