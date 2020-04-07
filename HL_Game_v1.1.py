@@ -52,7 +52,7 @@ def h1_statement(statement, char):
     print(char*len(statement))
     print()
 
-
+# Introduction
 welcome = h1_statement("\033[1m    ===     Higher/Lower Game        ===", "=\033[0m")
 print("\nWelcome to HL game, by Aref Osman. The game will generate a secret number\n"
       "between the 2 numbers that you will give shortly. Your task is to find that number\n"
@@ -67,10 +67,8 @@ if tip_input != "":
     print("\n\033[1mJK! April fools! You're on your own :((((\033[0m\n")
 else:
     print("\n\033[1mGood one! You wouldn't need it anyway - trust me!\033[0m")
-5
-print("----------------------------------------------------\n")
 
-# Introduction to go here
+print("----------------------------------------------------\n")
 
 # Game loop starts here
 keep_going = ""
