@@ -62,7 +62,7 @@ print("\nWelcome to HL game, by Aref Osman. The game will generate a secret numb
 print()
 
 tip_input = input("\033[44;42mTo find out a useful tip for the game, push any key. Otherwise, push enter to start"
-                  " playing!\033[m")
+                  " playing!\033[m ")
 if tip_input != "":
     print("\n\033[1mJK! April fools! You're on your own :((((\033[0m\n")
 else:
