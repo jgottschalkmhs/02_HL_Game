@@ -106,12 +106,18 @@ while keep_going == "":
     # Set front-end game difficulty
     difficulty = ""
     game_diff = ""
+    
+    # GK: Loop to allow users to change their mind on the difficulty level
     difficulty_keep_going = ""
     while difficulty_keep_going == "":
+        # GK: Easy, medium and hard options have been highlighted in green, orange and red
+        # GK: You could put details of the codes here (ie: which bit of the code below makes the label red?
         difficulty = input(">>> Please choose a game difficulty to play\n\n"
                            "(Type the letter code or the difficulty itself)\n"
                            "|\033[44;42m   Easy (E)   \033[m|\033[44;43m   Medium (M)   \033[m|\033[44;41m"
                            "   Hard (H)   \033[m|\n\n\n\033[1mDifficulty: \033[0m\n")
+        
+        # GK: Repeat the 'difficulty' question until a valid answer is entered
         while difficulty.lower() != "e" and difficulty.lower() != "easy" and difficulty.lower() != "m" and \
                 difficulty.lower() != "medium" and difficulty.lower() != "h" and difficulty.lower() != "hard":
             print()
